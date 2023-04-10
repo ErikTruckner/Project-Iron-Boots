@@ -30,16 +30,16 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_s3o8u4a',
-        'template_fjbss0t',
+        'service_1234567',
+        'template_1234567',
         {
           from_name: form.name,
           to_name: 'Erik',
           from_email: form.email,
-          to_email: 'supererikland@gmail.com',
+          to_email: 'random@gmail.com',
           message: form.message,
         },
-        'uhvqPgHe8kyncBlQ3'
+        'anotherAuth'
       )
       .then(
         () => {

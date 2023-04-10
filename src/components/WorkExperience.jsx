@@ -1,36 +1,45 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCube, Autoplay } from 'swiper'
+import { EffectCube, Pagination, Navigation, Autoplay } from 'swiper'
 
 import 'swiper/css'
 import 'swiper/css/effect-cube'
-
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
 
 const slides = [
   {
     id: 0,
-    jobTitle: 'Freelance Contractor',
-    companyName: "Erik's Lawn Service",
-    datesWorked: ' 2007 - 2023 ',
+    jobTitle: 'Job Title',
+    companyName: 'Company Name',
+    datesWorked: ' 2020 - 2023 ',
     jobDescription:
-      'Create, manage, and implement scheduling. Administrative work and billing. Establishing client contracts. Care for properties according to contracts',
+      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
   },
   {
     id: 1,
-    jobTitle: 'WordPress Developer',
-    companyName: 'Dharmacakra',
-    datesWorked: ' 2021 - 2023',
+    jobTitle: 'Job Title',
+    companyName: 'Company Name',
+    datesWorked: ' 2020 - 2023',
     jobDescription:
-      'Design and develope website using WordPress. Implement responsive design and ensure browser compatibility. Content creation and blog article writing.',
+      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
   },
   {
     id: 2,
-    jobTitle: 'Full Stack Developer',
-    companyName: 'AbsurDesign',
-    datesWorked: ' 2022 - 2023',
+    jobTitle: 'Job Title',
+    companyName: 'Company Name',
+    datesWorked: ' 2020 - 2023',
     jobDescription:
-      'Creating tutorial courses on React Three Fiber. Utilzing React Three Fiber, Framer Motion, and Swiper.js to build amazing looking resuable UI/UX components. I use Node and Express to provide functional CRUD operations with SQL or noSQL databases. ',
+      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
+  },
+  {
+    id: 3,
+    jobTitle: 'Job Title',
+    companyName: 'Company Name',
+    datesWorked: ' 2020 - 2023',
+    jobDescription:
+      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
   },
 ]
 
