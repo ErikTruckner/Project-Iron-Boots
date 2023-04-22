@@ -1,45 +1,38 @@
-import React from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCube, Pagination, Navigation, Autoplay } from 'swiper'
+import { EffectCube, Autoplay } from 'swiper'
+import { useInView } from 'react-intersection-observer'
 
 import 'swiper/css'
 import 'swiper/css/effect-cube'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
+
 import 'swiper/css/autoplay'
 
 const slides = [
   {
     id: 0,
-    jobTitle: 'Job Title',
-    companyName: 'Company Name',
-    datesWorked: ' 2020 - 2023 ',
+    jobTitle: 'Full Stack Developer',
+    companyName: 'AbsurDesign',
+    datesWorked: ' 2022 - 2023',
     jobDescription:
-      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
+      'Creating tutorial courses on React Three Fiber. Utilzing React Three Fiber, Framer Motion, and Swiper.js to build amazing looking resuable UI/UX components. I use Node and Express to provide functional CRUD operations with SQL or noSQL databases. ',
   },
+
   {
     id: 1,
-    jobTitle: 'Job Title',
-    companyName: 'Company Name',
-    datesWorked: ' 2020 - 2023',
+    jobTitle: 'WordPress Developer',
+    companyName: 'Dharmacakra',
+    datesWorked: ' 2021 - 2023',
     jobDescription:
-      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
+      'Design and develope website using WordPress. Implement responsive design and ensure browser compatibility. Content creation and blog article writing.',
   },
   {
     id: 2,
-    jobTitle: 'Job Title',
-    companyName: 'Company Name',
-    datesWorked: ' 2020 - 2023',
+    jobTitle: 'Freelance Contractor',
+    companyName: "Erik's Lawn Service",
+    datesWorked: ' 2007 - 2023 ',
     jobDescription:
-      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
-  },
-  {
-    id: 3,
-    jobTitle: 'Job Title',
-    companyName: 'Company Name',
-    datesWorked: ' 2020 - 2023',
-    jobDescription:
-      'Put the details of the job and skills required here. Example: I worked with React Three Fiber, Framer Motion, and Swiper.js to build amazing looking UI that is reuseable. I used Node and Express to provide functional CRUD operations with a noSQL database.',
+      'Create, manage, and implement scheduling. Administrative work and billing. Establishing client contracts. Care for properties according to contracts',
   },
 ]
 
@@ -59,6 +52,23 @@ const WorkExperience = () => {
     )
   }
 
+  // INTERSECTION OBSERVER TIME DELAY
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const swiperRef = useRef(null)
+  const { ref, inView } = useInView({
+    threshold: 0.5, // Intersection threshold for triggering the observer
+    triggerOnce: true, // Only trigger once
+    onChange: (isVisible) => setIsIntersecting(isVisible),
+  })
+
+  useEffect(() => {
+    // If the Swiper component is in view, and the intersection state is true,
+    // then start the Swiper autoplay feature.
+    if (inView && isIntersecting) {
+      swiperRef.current.swiper.autoplay.start()
+    }
+  }, [inView, isIntersecting])
+
   return (
     <section className='relative w-screen h-screen overflow-hidden '>
       <div className='w-full h-full flex flex-col justify-center items-center text-white z-10 my-5'>
@@ -68,15 +78,17 @@ const WorkExperience = () => {
           erience
         </h1>
         <p className='mt-5'>Swipe or drag the items</p>
-        <div className='w-[90%] lg:w-1/4 my-10'>
+        <div ref={ref} className='w-[90%] h-full lg:w-1/4 my-10'>
           <Swiper
+            ref={swiperRef}
             grabCursor={true}
             spaceBetween={0}
             slidesPerView={1}
-            autoplay={{
-              delay: 6000,
-              disableOnInteraction: false,
-            }}
+            autoplay={
+              isIntersecting
+                ? { delay: 6000, disableOnInteraction: false }
+                : false
+            } // Only enable autoplay if component is in view
             speed={2000}
             loop={true}
             effect={'cube'}

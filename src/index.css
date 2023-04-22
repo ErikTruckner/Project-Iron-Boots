@@ -24,14 +24,6 @@ html body {
   outline: none;
 }
 
-.loader {
-  width: 10px;
-  height: 10px;
-  margin: 40px auto;
-  border-radius: 50%;
-  background: #fff;
-}
-
 .light-blue-text {
   color: #61dbfb;
 }

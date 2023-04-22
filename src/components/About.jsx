@@ -30,19 +30,18 @@ const About = () => {
           <span className=' light-blue-text font-semibold '> Me</span>
         </h1>
         <p className='mt-8 mx-3 text-base font-serif'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. In, est
-          culpa? In soluta, odit error harum at dicta reiciendis accusamus quod
-          consequuntur aperiam possimus repudiandae neque aspernatur inventore
-          labore illum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Eligendi aspernatur, nesciunt ipsum iure quos eaque, cupiditate iusto
-          nulla facilis tempore dolores perspiciatis explicabo doloremque ullam
-          facere non vel enim saepe! Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Iusto error voluptatem totam, vel rem ipsa ut fuga!
-          Repellat dicta voluptatem odit sapiente, nulla ducimus aliquid
-          nesciunt! Vero dolorum deserunt eos!
+          As a Full Stack 3D Developer I possess technical expertise in
+          utilizing frontend JavaScript technologies such as React Three Fiber,
+          Three.js, React, Next, Vue, and Nuxt to deliver impactful visual
+          solutions. I create exceptional user experiences through creative
+          design and intuitive interfaces, incorporating emerging technologies
+          to push the boundaries of frontend visuals and enhance user experience
+          and engagement. To store necessary information I utilize Node.js and
+          Express.js combined with the approriate database for the project,
+          being either SQL or noSQL.
         </p>
       </motion.div>
-      <div className=' absolute flex flex-col  bottom-[20%] left-[50%] translate-x-[-50%]'>
+      <div className=' absolute flex flex-col  bottom-[13%] left-[50%] translate-x-[-50%]'>
         <div className='slide-bottom'>
           <div className='down-arrow'></div>
           <div className='down-arrow'></div>
