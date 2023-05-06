@@ -30,15 +30,26 @@ const About = () => {
           <span className=' light-blue-text font-semibold '> Me</span>
         </h1>
         <p className='mt-8 mx-3 text-base font-serif'>
-          As a Full Stack 3D Developer I possess technical expertise in
-          utilizing frontend JavaScript technologies such as React Three Fiber,
-          Three.js, React, Next, Vue, and Nuxt to deliver impactful visual
-          solutions. I create exceptional user experiences through creative
-          design and intuitive interfaces, incorporating emerging technologies
-          to push the boundaries of frontend visuals and enhance user experience
-          and engagement. To store necessary information I utilize Node.js and
-          Express.js combined with the approriate database for the project,
-          being either SQL or noSQL.
+          I create 3D web experiences using a range of technologies, including
+          Three.js, React Three Fiber, Unity, and Blender. I teach others how to
+          use these tools on my{' '}
+          <a
+            href='https://www.youtube.com/@webddd/videos'
+            target='_blank'
+            className='about-links'>
+            {' '}
+            YouTube Channel{''}
+          </a>{' '}
+          and in my{' '}
+          <a
+            href='https://www.udemy.com/user/erik-truckner/'
+            target='_blank'
+            className='about-links'>
+            Udemy Courses.
+          </a>{' '}
+          I love working with the 3D medium, both programming and modeling, as
+          the potential for creativity is endless. Continue on and check out my
+          projects!
         </p>
       </motion.div>
       <div className=' absolute flex flex-col  bottom-[13%] left-[50%] translate-x-[-50%]'>

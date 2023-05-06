@@ -18,6 +18,7 @@ import reactToDo from '../assets/reactToDo.png'
 import VueThreeSplash from '../assets/VueThreeSplash.png'
 import previousPort from '../assets/previousPort.jpg'
 import solarSystem from '../assets/solarSystemTN.jpg'
+import linkVerseTN from '../assets/linkVerseTN.jpg'
 
 const slides = [
   {
@@ -31,6 +32,15 @@ const slides = [
   },
   {
     id: 1,
+    imageSrc: linkVerseTN,
+    projectName: '3D LinkTree Clone',
+    projectLink: 'https://3d-linktree.netlify.app/',
+    projectDescription:
+      'A 3D LinkTree clone built with Three.js, React Three Fiber, & Framer Motion. A work in progress with continously expanding features.',
+    githubLink: 'https://github.com/ErikTruckner/Project-Linktree',
+  },
+  {
+    id: 2,
     imageSrc: VueThreeSplash,
     projectName: 'Three.js Splash Page',
     projectLink: 'https://portfoliosplash.netlify.app/',
@@ -39,7 +49,7 @@ const slides = [
     githubLink: 'https://github.com/ErikTruckner/VueTHREEjsPortfolio',
   },
   {
-    id: 2,
+    id: 3,
     imageSrc: previousPort,
     projectName: 'React Three Fiber Portfolio Variation',
     projectLink: 'https://eriktrucknerportfolio.netlify.app/',
@@ -48,7 +58,7 @@ const slides = [
     githubLink: 'https://github.com/ErikTruckner/Project-Sword-Edge',
   },
   {
-    id: 3,
+    id: 4,
     imageSrc: reactExpense,
     projectName: 'React Expense Tracker',
     projectLink: 'https://github.com/ErikTruckner/REACT-Expense-Tracker',
@@ -57,7 +67,7 @@ const slides = [
     githubLink: 'https://github.com/ErikTruckner/REACT-Expense-Tracker',
   },
   {
-    id: 4,
+    id: 5,
     imageSrc: reactThreeCars,
     projectName: 'React Three Fiber Car Shop',
     projectLink: '#',
@@ -66,7 +76,7 @@ const slides = [
     githubLink: '#',
   },
   {
-    id: 5,
+    id: 6,
     imageSrc: reactToDo,
     projectName: 'React To Do List',
     projectLink: 'https://eriks-react-todo-list.netlify.app/',
@@ -75,7 +85,7 @@ const slides = [
     githubLink: 'https://github.com/ErikTruckner/react-todo-list',
   },
   {
-    id: 6,
+    id: 7,
     imageSrc: ogTN,
     projectName: 'Vanilla Three.js Portfolio',
     projectLink: 'https://eriks-react-todo-list.netlify.app/',
@@ -84,7 +94,7 @@ const slides = [
     githubLink: 'https://github.com/ErikTruckner/portfolio3',
   },
   {
-    id: 7,
+    id: 8,
     imageSrc: reactGoals,
     projectName: 'React Daily Goals App',
     projectLink: 'https://eriks-daily-goals-app.netlify.app/',
@@ -119,7 +129,7 @@ const SwiperProjects = () => {
           </h2>
           <p className='text-white text-center mb-5'>{projectDescription}</p>
           <div className='flex justify-center mb-1'>
-            <a href={githubLink}>
+            <a href={githubLink} target='_blank'>
               <img
                 src='https://img.icons8.com/material-outlined/24/61dbfb/github.png'
                 alt='github link'

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useCallback } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 const actionNames = [
@@ -15,12 +15,18 @@ const ReactLogo = () => {
   // Animation
   const animations = useAnimations(reactLogo.animations, reactLogo.scene)
 
-  useEffect(() => {
+  // Memoize the animations object and the playActions function using useCallback
+  const { actions } = useAnimations(reactLogo.animations, reactLogo.scene)
+  const playActions = useCallback(() => {
     actionNames.forEach((actionName) => {
-      const action = animations.actions[actionName]
+      const action = actions[actionName]
       action.play()
     })
-  }, [animations])
+  }, [actions])
+
+  useEffect(() => {
+    playActions()
+  }, [playActions])
 
   return (
     // Create the mesh that our scene will go in
@@ -37,8 +43,4 @@ const ReactLogo = () => {
   )
 }
 
-const App = () => {
-  return <ReactLogo />
-}
-
-export default App
+export default ReactLogo

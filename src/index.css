@@ -28,6 +28,13 @@ html body {
   color: #61dbfb;
 }
 
+.about-links {
+  color: rgb(4, 185, 122);
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
 .glass-background {
   background: rgb(6, 158, 246);
   background: -moz-linear-gradient(

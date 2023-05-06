@@ -8,16 +8,44 @@ import 'swiper/css/effect-cube'
 
 import 'swiper/css/autoplay'
 
+const youTubeLink = (
+  <span>
+    {' '}
+    <a
+      href='https://www.youtube.com/@webddd/videos'
+      target='_blank'
+      className='about-links'>
+      YouTube Channel
+    </a>
+  </span>
+)
+
+const udemyLink = (
+  <span>
+    {' '}
+    <a
+      href='https://www.udemy.com/user/erik-truckner/'
+      target='_blank'
+      className='about-links'>
+      Udemy Courses
+    </a>
+  </span>
+)
+
 const slides = [
   {
     id: 0,
-    jobTitle: 'Full Stack Developer',
+    jobTitle: 'Full Stack 3D Developer',
     companyName: 'AbsurDesign',
     datesWorked: ' 2022 - 2023',
-    jobDescription:
-      'Creating tutorial courses on React Three Fiber. Utilzing React Three Fiber, Framer Motion, and Swiper.js to build amazing looking resuable UI/UX components. I use Node and Express to provide functional CRUD operations with SQL or noSQL databases. ',
+    jobDescription: (
+      <>
+        Planning, designing, creating, and teaching tutorial courses on
+        Three.js, React Three Fiber, Unity, & Blender. See them here on my
+        {youTubeLink} and {udemyLink}.
+      </>
+    ),
   },
-
   {
     id: 1,
     jobTitle: 'WordPress Developer',
