@@ -61,7 +61,7 @@ const slides = [
     id: 4,
     imageSrc: reactExpense,
     projectName: 'React Expense Tracker',
-    projectLink: 'https://github.com/ErikTruckner/REACT-Expense-Tracker',
+    projectLink: 'https://eriks-react-expense-tracker.netlify.app/',
     projectDescription:
       'Web based platform that provides users with a visual graph of their spending over time. Built with React and custom CSS.',
     githubLink: 'https://github.com/ErikTruckner/REACT-Expense-Tracker',
@@ -70,10 +70,10 @@ const slides = [
     id: 5,
     imageSrc: reactThreeCars,
     projectName: 'React Three Fiber Car Shop',
-    projectLink: '#',
+    projectLink: 'https://carcolorshop.netlify.app/',
     projectDescription:
       'React Three Fiber project featuring user ability to manipulate camera position and colors of imported glTF models using HTML buttons. iOS users may need to enable WebGL in their browser. This app is rather heavy as it utilizes physics, multiple lights sources, shadows, and multiple glTF objects; some devices may suffer from performance issues.',
-    githubLink: '#',
+    githubLink: 'https://github.com/ErikTruckner/cars',
   },
   {
     id: 6,

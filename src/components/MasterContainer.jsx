@@ -1,4 +1,4 @@
-import React, { useState, useRef, Suspense } from 'react'
+import React, { useState, useRef, Suspense, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 //
 import StarsAnimated from './StarsAnimated'
@@ -13,46 +13,66 @@ import EarthModel from './canvas/EarthModel'
 import { Loader } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 
+const LoadingScreen = () => {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: '0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '100vh',
+        backgroundColor: '#000000',
+        color: '#ffffff',
+        fontSize: '24px',
+      }}>
+      <h1>The Robots are Working...</h1>
+    </div>
+  )
+}
+
 const MasterContainer = () => {
   // Loading Screen State
   const [isLoaded, setIsLoaded] = useState(false)
 
-  window.onload = () => {
+  const canvasRef = useRef()
+
+  const handleCreated = () => {
     setIsLoaded(true)
-  }
-  // Canvas BG color
-  const bgColor = ({ gl }) => {
-    gl.setClearColor('#000000', 1)
   }
 
   //
   return (
     <>
+      {!isLoaded && <LoadingScreen />}
       <Canvas
         id='canvas'
+        ref={canvasRef}
         style={{ position: 'fixed' }}
         camera={{ position: [20, 3, 5], fov: 25 }}
-        onCreated={bgColor}>
+        onCreated={handleCreated}
+        gl={{ alpha: false }}>
         {/* <Perf /> */}
         <StarsAnimated />
-        {/* We need a light to see our gltf model */}
-
         <pointLight intensity={2} color={0x61dbfb} position={[0, 5, 5]} />
-        <spotLight position={(-20, 50, 10)} intensity={1} color={0x61dbfb} />
+        <spotLight position={[-20, 50, 10]} intensity={1} color={0x61dbfb} />
         <Suspense fallback={null}>
-          {/* React Model */}
           <ReactLogo />
-
-          {/* Earth Model */}
           <EarthModel />
         </Suspense>
       </Canvas>
       <Loader />
-      <Hero isLoaded={isLoaded} />
-      <About />
-      <SwiperProjects />
-      <WorkExperience />
-      <Contact />
+      {isLoaded && (
+        <>
+          <Hero isLoaded={isLoaded} />
+          <About />
+          <SwiperProjects />
+          <WorkExperience />
+          <Contact />
+        </>
+      )}
     </>
   )
 }

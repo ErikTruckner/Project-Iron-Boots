@@ -2,9 +2,7 @@ import { useEffect } from 'react'
 import { useAnimation, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-const Hero = (props) => {
-  const { isLoaded } = props
-
+const Hero = ({ isLoaded }) => {
   const h1Variants = {
     visible: {
       opacity: 1,
@@ -38,39 +36,35 @@ const Hero = (props) => {
   const [ref, inView] = useInView()
 
   useEffect(() => {
-    if (inView) {
+    if (isLoaded && inView) {
       controls.start('visible')
     }
-  }, [controls, inView])
+  }, [controls, inView, isLoaded])
 
   return (
     <section className='w-screen h-screen mx-auto'>
       <div className='absolute left-[5%] top-[5%] xl:left-[14%] xl:top-[14%] mx-auto fredoka-font text-white'>
-        {isLoaded ? (
-          <>
-            <motion.h1
-              ref={ref}
-              animate={controls}
-              initial='hidden'
-              variants={h1Variants}
-              id='hero-header'
-              className='puff-in-center text-5xl lg:text-7xl'>
-              Hi, I'm
-              <span className='hover-text-glow light-blue-text font-semibold '>
-                {' '}
-                Erik
-              </span>
-            </motion.h1>
-            <motion.h2
-              ref={ref}
-              animate={controls}
-              initial='hidden'
-              variants={h2Variants}
-              className='mt-8 text-3xl w-2/3 text-center'>
-              I'm a Full Stack 3D React Developer
-            </motion.h2>
-          </>
-        ) : null}
+        <motion.h1
+          ref={ref}
+          animate={controls}
+          initial='hidden'
+          variants={h1Variants}
+          id='hero-header'
+          className='puff-in-center text-5xl lg:text-7xl'>
+          Hi, I'm
+          <span className='hover-text-glow light-blue-text font-semibold '>
+            {' '}
+            Erik
+          </span>
+        </motion.h1>
+        <motion.h2
+          ref={ref}
+          animate={controls}
+          initial='hidden'
+          variants={h2Variants}
+          className='mt-8 text-3xl w-2/3 text-center'>
+          I'm a Full Stack 3D React Developer
+        </motion.h2>
       </div>
       <div className='absolute flex flex-col bottom-[13%] left-[50%] translate-x-[-50%]'>
         <div className='slide-bottom'>
